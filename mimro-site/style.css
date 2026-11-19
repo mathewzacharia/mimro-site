@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "Serto Jerusalem";
+  src: local("Serto Jerusalem"),
+       url("fonts/SertoJerusalem.woff2") format("woff2"),
+       url("fonts/SertoJerusalem.ttf") format("truetype");
+  font-display: swap;
+}
+:root {
+  --paper: #fbfaf7;
+  --ink: #1c1d24;
+  --muted: #565a69;
+  --indigo: #18264a;
+  --indigo-soft: #2b3d6b;
+  --ochre: #c9962f;
+  --line: #dcdad2;
+  --card: #ffffff;
+  --syriac: "Serto Jerusalem", "Serto Batnan", "Noto Sans Syriac Western", "Noto Sans Syriac", "Estrangelo Edessa", serif;
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f1626;
+    --ink: #e8ebf5;
+    --muted: #a3abc4;
+    --indigo: #0a1020;
+    --indigo-soft: #9db4f0;
+    --line: #26304d;
+    --card: #162038;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 1.08rem; line-height: 1.7; }
+a { color: var(--indigo-soft); }
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--ochre); outline-offset: 3px; }
+.wrap { max-width: 62rem; margin: 0 auto; padding: 0 1.5rem; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; background: #fff; color: #000; padding: .5rem 1rem; z-index: 10; }
+
+.top { background: var(--indigo); color: #fff; }
+.top .wrap { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; align-items: center; padding-top: 1.1rem; padding-bottom: 1.1rem; }
+.top strong { font-size: 1.25rem; letter-spacing: .02em; }
+.top nav a { color: #d6dcf0; text-decoration: none; margin-right: 1.3rem; }
+.top nav a:last-child { margin-right: 0; }
+.top nav a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+
+.hero { background: var(--indigo); color: #fff; padding: 3rem 0 5rem; }
+.hero .wrap { display: grid; gap: 2rem; align-items: center; }
+.hero h1 { font-size: clamp(1.9rem, 5vw, 3rem); line-height: 1.15; margin: 0 0 1rem; letter-spacing: -.01em; }
+.hero p { max-width: 34rem; margin: 0 0 1.8rem; color: #dfe4f5; font-size: 1.2rem; }
+.word { font-family: var(--syriac); font-size: clamp(5.5rem, 22vw, 12rem); line-height: 1.15; color: var(--ochre); margin: 0; }
+.btn { display: inline-block; padding: .8rem 1.5rem; border-radius: 3px; background: var(--ochre); color: #1c1d24; text-decoration: none; font-weight: 600; }
+.btn:hover { filter: brightness(1.08); }
+@media (min-width: 52rem) { .hero .wrap { grid-template-columns: 1.2fr 1fr; } .word { text-align: center; } }
+
+section { padding: 4rem 0; }
+section + section { border-top: 1px solid var(--line); }
+h2 { font-size: 1.9rem; margin: 0 0 .75rem; line-height: 1.2; }
+h3 { margin: 0 0 .3rem; font-size: 1.2rem; }
+.lead { max-width: 40rem; color: var(--muted); margin: 0 0 2rem; }
+
+.focus { display: grid; gap: 1.5rem; }
+.focus > div { border-left: 4px solid var(--ochre); padding-left: 1.1rem; }
+.focus p { margin: 0; color: var(--muted); }
+@media (min-width: 46rem) { .focus { grid-template-columns: repeat(3, 1fr); } }
+
+.alphabet { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(5.2rem, 1fr)); gap: .6rem; direction: rtl; }
+.alphabet li { direction: ltr; border: 1px solid var(--line); border-radius: 4px; background: var(--card); text-align: center; padding: .6rem .3rem .5rem; }
+.alphabet .g { display: block; font-family: var(--syriac); font-size: 2.2rem; line-height: 1.4; }
+.alphabet .n { display: block; font-size: .85rem; color: var(--muted); }
+
+.events { list-style: none; margin: 0; padding: 0; }
+.events li { padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.events li:first-child { border-top: 1px solid var(--line); }
+.events strong { display: block; }
+.events span { color: var(--muted); }
+
+footer { background: var(--indigo); color: #cfd6ee; padding: 2.5rem 0; font-size: .95rem; }
+footer a { color: #fff; }
+
+.notfound { padding-top: 4rem; padding-bottom: 4rem; }
+
+.school { font-family: var(--syriac); font-size: clamp(1.6rem, 5vw, 2.4rem); line-height: 1.6; color: var(--indigo-soft); margin: 0 0 1rem; }
+.people { display: grid; gap: 1.2rem; margin: 0; }
+.people div { border-left: 4px solid var(--ochre); padding-left: 1.1rem; }
+.people dt { font-weight: 600; }
+.people dd { margin: 0; color: var(--muted); }
+@media (min-width: 46rem) { .people { grid-template-columns: repeat(2, 1fr); } }
+
+.brand { color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: .6rem; }
+.pagehead { background: var(--indigo); color: #fff; padding: 2.5rem 0 2rem; }
+.pagehead h1 { margin: 0 0 .5rem; font-size: clamp(1.9rem, 5vw, 2.8rem); }
+.pagehead .school { color: var(--ochre); margin: 0; }
+.prose { max-width: 44rem; }
+.prose h2 { margin-top: 2.5rem; }
+.mission { padding-left: 1.2rem; margin: 0; }
+.mission li { margin-bottom: .6rem; }
+
+.books { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+.books li { display: flex; justify-content: space-between; gap: 1rem; padding: .8rem 0; border-bottom: 1px solid var(--line); }
+.books li:first-child { border-top: 1px solid var(--line); }
+.books li > span:last-child { color: var(--muted); white-space: nowrap; font-size: .95rem; }
+
+.logo { height: 44px; width: auto; background: #fff; border-radius: 8px; padding: 2px 4px; }
+
+
+/* ===== Literary learning theme: parchment pages, ruled lines, gold accents ===== */
+:root {
+  --paper: #f3ecd9;
+  --card: #fffbf0;
+  --line: #d9ccae;
+  --ink: #27211b;
+  --muted: #5e5446;
+  --ochre: #b8862b;
+  --rule: rgba(24, 38, 74, .07);
+  --display: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #121829;
+    --card: #1a2238;
+    --line: #2b3556;
+    --ink: #ebe6d8;
+    --muted: #b0a995;
+    --rule: rgba(235, 230, 216, .05);
+  }
+}
+body {
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 33px, var(--rule) 33px, var(--rule) 34px);
+}
+h1, h2, h3, .top strong, .books li, .school { font-family: var(--display); }
+h2::after { content: ""; display: block; width: 3.2rem; height: 3px; margin-top: .55rem; background: var(--ochre); }
+section + section { border-top: 3px double var(--line); }
+.top, .pagehead, .hero { border-bottom: 4px solid var(--ochre); }
+
+/* Hero: a page of Syriac letters fading behind the title, like a manuscript leaf */
+.hero { position: relative; overflow: hidden; }
+.hero::before {
+  content: "ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ";
+  content: "ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ ܫ ܬ" / "";
+  position: absolute; inset: 0;
+  font-family: var(--syriac); font-size: 2.6rem; line-height: 1.9; letter-spacing: .9rem;
+  direction: rtl; text-align: justify; overflow: hidden;
+  color: rgba(201, 150, 47, .13);
+  pointer-events: none;
+}
+.hero .wrap { position: relative; }
+
+/* Book-style touches */
+#about .lead:first-of-type::first-letter,
+.prose > p:first-of-type::first-letter {
+  float: left; font-family: var(--display); font-size: 3.6em; line-height: .85;
+  padding: .08em .12em 0 0; color: var(--ochre);
+}
+.mission li::marker { color: var(--ochre); }
+.alphabet li { border-top: 3px solid var(--ochre); box-shadow: 0 1px 0 var(--line); }
+.alphabet .g { color: var(--indigo-soft); }
+.focus > div, .people div { background: var(--card); padding: 1rem 1.1rem; border-radius: 0 4px 4px 0; }
+.books li { border-bottom: 1px dotted var(--muted); }
+.books li:first-child { border-top: 1px dotted var(--muted); }
+.events li { border-bottom: 1px dotted var(--muted); }
+.events li:first-child { border-top: 1px dotted var(--muted); }
+footer { border-top: 4px solid var(--ochre); }
